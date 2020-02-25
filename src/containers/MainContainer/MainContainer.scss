@@ -2,5 +2,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: column;
   padding: 80px 0 0 0;
+  margin: 50px 0;
+}
+
+.spinner-color {
+  color: #3168DE;
+}
+
+.loading {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15.2778px;
+  line-height: 22px;
+  color: #252D76;
+  margin: 10px 0;
 }

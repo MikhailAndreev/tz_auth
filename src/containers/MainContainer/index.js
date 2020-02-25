@@ -38,9 +38,12 @@ class MainContainer extends Component {
 
           {authRedirect}
 
-          <div className="spinner-border " role="status">
+          <div className="spinner-border spinner-color" role="status">
             <span className="sr-only">Loading...</span>
           </div>
+          <p className='loading'>
+            Загрузка...
+          </p>
 
         </div>
 
