@@ -1,0 +1,128 @@
+.input-section {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+@mixin makeOpacity ($color, $amount) {
+
+}
+
+.input-element {
+    outline: none;
+    border-bottom: 1px solid rgba(#252D76, 0.2);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font: inherit;
+    padding: 6px 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    &::placeholder {
+        font-family: Quicksand, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 17px;
+        color: rgba(#252D76, 0.4);
+    }
+}
+
+.Label {
+    //font-weight: bold;
+    //display: block;
+    //margin-bottom: 8px;
+    font-family: Ubuntu, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13.1944px;
+    line-height: 15px;
+    color: #252D76;
+    opacity: 0.5;
+    padding: 0;
+}
+
+
+
+.input-element:focus {
+    outline: none;
+    //background-color: lightgrey;
+    border-bottom: 2px solid blue;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.invalid {
+    border-bottom: 2px solid red;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.input-element:disabled {
+    background-color: #d3d3d3;
+}
+
+.error-msg {
+    padding: 5px 0 0 0;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #E81D4E;
+}
+
+.image-input {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    visibility: hidden;
+}
+
+.image-input input[type=file] {
+    outline:0;
+    opacity:0;
+    pointer-events:none;
+    user-select:none
+}
+.img-user {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent url("../../../assets/images/emptyImg.png") no-repeat center ;
+}
+.label {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    display:block;
+    padding:1.2em;
+    transition:border 300ms ease;
+    cursor:pointer;
+    text-align:center
+}
+.example-1 .label i {
+    display:block;
+    font-size:42px;
+    padding-bottom:16px
+}
+.label i, .label .title {
+    color:grey;
+    transition:200ms color
+}
+.label:hover {
+    border:2px solid #000
+}
+.label:hover i,.label:hover .title {
+    color:#000
+}

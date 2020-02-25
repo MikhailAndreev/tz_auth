@@ -1,0 +1,25 @@
+.tips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin: 20px;
+}
+
+.tips-text {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #929292;
+}
+
+.tips a {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13.8889px;
+  line-height: 20px;
+  color: #3066E0;
+}

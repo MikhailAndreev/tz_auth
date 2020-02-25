@@ -1,0 +1,40 @@
+.Button {
+    border: none;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 156px;
+    background: #3168DE;
+    box-shadow: 0px 1.38889px 6.94445px rgba(0, 0, 0, 0.1);
+    border-radius: 22.9167px;
+}
+
+.mapButton {
+    font-size: 14px;
+    padding: 0;
+    margin: 40px 0;
+    width: 100%;
+    max-width: 185px;
+    height: 35px;
+    color: #3066E0;;
+    background: #FFFFFF;
+}
+
+.Button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.Success {
+    color: white;
+}
+
+.Danger {
+    color: #944317;
+}

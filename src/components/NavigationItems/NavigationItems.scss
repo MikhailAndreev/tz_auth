@@ -1,0 +1,42 @@
+
+.nav-items {
+  margin: 34px 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  margin: 0;
+  display: flex;
+  height: 100%;
+  width: auto;
+  align-items: center;
+}
+
+.nav-item a {
+  font-family: Roboto Slab, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #AEAEAE;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.nav-item a:hover,
+.nav-item a:active,
+.nav-item a.active {
+  font-family: Roboto Slab, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 29px;
+  line-height: 35px;
+  color: #252D76;
+}
+
