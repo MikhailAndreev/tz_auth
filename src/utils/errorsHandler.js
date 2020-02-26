@@ -25,3 +25,34 @@ export const errorsHandler = (error) => {
     }
     
 }
+
+export const errorsHandlerInput = (error, type, isSignup, message) => {
+    if (error) {
+       if (error && error.message === 'INVALID_PASSWORD' && type === 'password') {
+        let errMsg = message
+        return errMsg
+      }
+      if (error && isSignup && error.message === 'WEAK_PASSWORD : Password should be at least 6 characters' && type === 'password') {
+        let errMsg = message
+        return errMsg
+      }
+      if (error && error.message === 'INVALID_EMAIL' && type === 'text') {
+        let errMsg = message
+        return errMsg
+      }
+      if (error && error.message === 'EMAIL_NOT_FOUND' && type === 'text') {
+        let errMsg = message
+        return errMsg
+      }
+      if (error && isSignup && error.message === 'EMAIL_EXISTS' && type === 'text') {
+        let errMsg = message
+        return errMsg
+      }
+      if (error && isSignup && error.message === 'INVALID_EMAIL' && type === 'text') {
+        let errMsg = message
+        return errMsg
+      } 
+    }
+    
+    
+}

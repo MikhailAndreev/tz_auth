@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Input.scss';
-
+import {errorsHandlerInput} from '../../../utils/errorsHandler';
 
 const Input = (props) => {
   let inputElement = null;
@@ -55,28 +55,7 @@ const Input = (props) => {
         onChange={props.changed}/>;
   }
 
-
-
-  let errMsg = null;
-  if (props.error && props.error.message === 'INVALID_PASSWORD' && props.elementType === 'password') {
-    errMsg = props.errorMsg
-  }
-  if (props.error && props.isSignup && props.error.message === 'WEAK_PASSWORD : Password should be at least 6 characters' && props.elementType === 'password') {
-    errMsg = props.errorMsg
-  }
-  if (props.error && props.error.message === 'INVALID_EMAIL' && props.elementType === 'text') {
-    errMsg = props.errorMsg
-  }
-  if (props.error && props.error.message === 'EMAIL_NOT_FOUND' && props.elementType === 'text') {
-    errMsg = props.errorMsg
-  }
-  if (props.error && props.isSignup && props.error.message === 'EMAIL_EXISTS' && props.elementType === 'text') {
-    errMsg = props.errorMsg
-  }
-  if (props.error && props.isSignup && props.error.message === 'INVALID_EMAIL' && props.elementType === 'text') {
-    errMsg = props.errorMsg
-  }
-  
+  const errMsg = errorsHandlerInput(props.error, props.elementType, props.isSignup, props.errorMsg)
 
   return (
     <div className='input-section'>
@@ -98,7 +77,6 @@ const Input = (props) => {
         </p>
       </div>
       }
-
 
     </div>
   );

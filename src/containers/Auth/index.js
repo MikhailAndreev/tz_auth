@@ -9,6 +9,8 @@ import * as actions from '../../store/actions/index';
 import Layout from "../../hoc/Layout";
 import {errorsHandler} from '../../utils/errorsHandler'
 
+const cyrillicPattern = /^\p{Script=Cyrillic}+$/u;
+
 
 class Auth extends Component {
   state = {
@@ -78,12 +80,12 @@ class Auth extends Component {
   }
 
   inputChangedHandler = (event, controlName) => {
-    console.log(this.state.controls[controlName].elementConfig.type);
+    const validValue = cyrillicPattern.test(event.target.value) ? '' : event.target.value;
     const updatedControls = {
       ...this.state.controls,
       [controlName]: {
         ...this.state.controls[controlName],
-        value: event.target.value,
+        value: validValue,
         valid: this.checkValidity(event.target.value, this.state.controls[controlName].validation),
         touched: true
       }
