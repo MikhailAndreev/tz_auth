@@ -23,7 +23,6 @@ export const errorsHandler = (error) => {
       return errorMsg
     }
     }
-    
 }
 
 export const errorsHandlerInput = (error, type, isSignup, message) => {
@@ -53,6 +52,5 @@ export const errorsHandlerInput = (error, type, isSignup, message) => {
         return errMsg
       } 
     }
-    
-    
+
 }

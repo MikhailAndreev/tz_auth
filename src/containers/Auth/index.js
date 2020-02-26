@@ -11,7 +11,6 @@ import {errorsHandler} from '../../utils/errorsHandler'
 
 const cyrillicPattern = /^\p{Script=Cyrillic}+$/u;
 
-
 class Auth extends Component {
   state = {
     errMsg: '',
