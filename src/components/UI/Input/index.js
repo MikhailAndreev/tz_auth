@@ -1,12 +1,11 @@
 import React from 'react';
 
 import './Input.scss';
-import img from '../../../assets/images/emptyImg.png';
-import usrImg from '../../../assets/images/usrImg.png';
 
 
 const Input = (props) => {
   let inputElement = null;
+  console.log(props)
   const inputClasses = ['input-element'];
 
   if (props.error) {
