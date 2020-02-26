@@ -7,10 +7,12 @@ import Button from '../../components/UI/Button';
 import './Auth.scss';
 import * as actions from '../../store/actions/index';
 import Layout from "../../hoc/Layout";
+import {errorsHandler} from '../../utils/errorsHandler'
 
 
 class Auth extends Component {
   state = {
+    errMsg: '',
     controls: {
       email: {
         elementType: 'input',
@@ -95,30 +97,13 @@ class Auth extends Component {
   };
 
   render() {
+    const errorMsg = errorsHandler(this.props.error, this.props.message);
     const formElementsArray = [];
     for (let key in this.state.controls) {
       formElementsArray.push({
         id: key,
         config: this.state.controls[key]
       })
-    }
-
-    let errorMsg = null;
-    if (this.props.error && this.props.error.message === 'INVALID_PASSWORD') {
-      errorMsg = 'Неверный парол'
-    }
-    if (this.props.error && this.props.error.message === 'INVALID_EMAIL') {
-      errorMsg = 'Ошибка, неверный email. Попробуйте снова'
-    }
-    
-    if (this.props.error && this.props.error.message === 'EMAIL_EXISTS') {
-      errorMsg = 'Ошибка, email уже существует. Попробуйте другой'
-    }
-    if (this.props.error  && this.props.error.message === 'EMAIL_EXISTS') {
-      errorMsg = 'Ошибка, email уже существует. Попробуйте другой'
-    }
-    if (this.props.error  && this.props.error.message === 'WEAK_PASSWORD : Password should be at least 6 characters') {
-      errorMsg = 'Ошибка, ненадежный пароль.Пароль должен состоять минимум из 6 символов'
     }
 
     const form = formElementsArray.map(formElement => (

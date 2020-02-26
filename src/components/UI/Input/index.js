@@ -5,7 +5,6 @@ import './Input.scss';
 
 const Input = (props) => {
   let inputElement = null;
-  console.log(props)
   const inputClasses = ['input-element'];
 
   if (props.error) {
@@ -55,6 +54,8 @@ const Input = (props) => {
         value={props.value}
         onChange={props.changed}/>;
   }
+
+
 
   let errMsg = null;
   if (props.error && props.error.message === 'INVALID_PASSWORD' && props.elementType === 'password') {
