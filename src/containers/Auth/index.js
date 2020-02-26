@@ -113,6 +113,12 @@ class Auth extends Component {
     if (this.props.error && this.props.error.message === 'EMAIL_EXISTS') {
       errorMsg = 'Ошибка, email уже существует. Попробуйте другой'
     }
+    if (this.props.error  && this.props.error.message === 'EMAIL_EXISTS') {
+      errorMsg = 'Ошибка, email уже существует. Попробуйте другой'
+    }
+    if (this.props.error  && this.props.error.message === 'WEAK_PASSWORD : Password should be at least 6 characters') {
+      errorMsg = 'Ошибка, ненадежный пароль.Пароль должен состоять минимум из 6 символов'
+    }
 
     const form = formElementsArray.map(formElement => (
       <Input

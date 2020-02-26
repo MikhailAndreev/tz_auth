@@ -70,6 +70,9 @@ const Input = (props) => {
   if (props.error && props.isSignup && props.error.message === 'INVALID_EMAIL' && props.elementType === 'text') {
     errMsg = props.errorMsg
   }
+  if (props.error && props.isSignup && props.error.message === 'WEAK_PASSWORD : Password should be at least 6 characters' && props.elementType === 'password') {
+    errMsg = props.errorMsg
+  }
 
   return (
     <div className='input-section'>
