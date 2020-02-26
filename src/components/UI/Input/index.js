@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Input.scss';
-
+import {errorsHandlerInput} from '../../../utils/errorsHandler';
 
 const Input = (props) => {
   let inputElement = null;
@@ -55,7 +55,7 @@ const Input = (props) => {
         onChange={props.changed}/>;
   }
 
-
+  const errMsg = errorsHandlerInput(props.error, props.elementType, props.isSignup, props.errorMsg)
 
   let errMsg = null;
   if (props.error && props.error.message === 'INVALID_PASSWORD' && props.elementType === 'password') {
@@ -76,7 +76,6 @@ const Input = (props) => {
   if (props.error && props.isSignup && props.error.message === 'INVALID_EMAIL' && props.elementType === 'text') {
     errMsg = props.errorMsg
   }
-  
 
   return (
     <div className='input-section'>
@@ -98,7 +97,6 @@ const Input = (props) => {
         </p>
       </div>
       }
-
 
     </div>
   );

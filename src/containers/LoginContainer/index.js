@@ -12,6 +12,7 @@ import Layout from "../../hoc/Layout";
 import Tips from "../../components/Tips";
 import {errorsHandler} from '../../utils/errorsHandler'
 
+const cyrillicPattern = /^\p{Script=Cyrillic}+$/u;
 
 class LoginContainer extends Component {
   state = {
@@ -80,11 +81,12 @@ class LoginContainer extends Component {
   };
 
   inputChangedHandler = (event, controlName) => {
+    const validValue = cyrillicPattern.test(event.target.value) ? '' : event.target.value;
     const updatedControls = {
       ...this.state.controls,
       [controlName]: {
         ...this.state.controls[controlName],
-        value: event.target.value,
+        value: validValue,
         valid: this.checkValidity(event.target.value, this.state.controls[controlName].validation),
         touched: true
       }
