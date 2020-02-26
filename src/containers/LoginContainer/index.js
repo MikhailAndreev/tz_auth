@@ -10,6 +10,7 @@ import WithClass from '../../hoc/withClass';
 import * as actions from '../../store/actions/index';
 import Layout from "../../hoc/Layout";
 import Tips from "../../components/Tips";
+import {errorsHandler} from '../../utils/errorsHandler'
 
 
 class LoginContainer extends Component {
@@ -97,22 +98,13 @@ class LoginContainer extends Component {
   };
 
   render() {
+    const errorMsg = errorsHandler(this.props.error, this.props.message);
     const formElementsArray = [];
     for (let key in this.state.controls) {
       formElementsArray.push({
         id: key,
         config: this.state.controls[key]
       })
-    }
-    let errorMsg = null;
-    if (this.props.error && this.props.error.message === 'INVALID_PASSWORD') {
-      errorMsg = 'Неверный парол'
-    }
-    if (this.props.error && this.props.error.message === 'EMAIL_NOT_FOUND') {
-      errorMsg = 'Учетной записи с таким email не существует. Попробуйте снова'
-    }
-    if (this.props.error && this.props.error.message === 'INVALID_EMAIL') {
-      errorMsg = 'Ошибка, неверный email. Попробуйте снова'
     }
 
     const form = formElementsArray.map(formElement => (
