@@ -110,6 +110,7 @@ class Auth extends Component {
     if (this.props.error && this.props.error.message === 'INVALID_EMAIL') {
       errorMsg = 'Ошибка, неверный email. Попробуйте снова'
     }
+    
     if (this.props.error && this.props.error.message === 'EMAIL_EXISTS') {
       errorMsg = 'Ошибка, email уже существует. Попробуйте другой'
     }

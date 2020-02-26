@@ -108,6 +108,9 @@ class LoginContainer extends Component {
     if (this.props.error && this.props.error.message === 'INVALID_PASSWORD') {
       errorMsg = 'Неверный парол'
     }
+    if (this.props.error && this.props.error.message === 'EMAIL_NOT_FOUND') {
+      errorMsg = 'Учетной записи с таким email не существует. Попробуйте снова'
+    }
     if (this.props.error && this.props.error.message === 'INVALID_EMAIL') {
       errorMsg = 'Ошибка, неверный email. Попробуйте снова'
     }
