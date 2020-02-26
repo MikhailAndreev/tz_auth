@@ -57,7 +57,6 @@ const Input = (props) => {
 
   const errMsg = errorsHandlerInput(props.error, props.elementType, props.isSignup, props.errorMsg)
 
-  let errMsg = null;
   if (props.error && props.error.message === 'INVALID_PASSWORD' && props.elementType === 'password') {
     errMsg = props.errorMsg
   }
