@@ -51,6 +51,10 @@ export const errorsHandlerInput = (error, type, isSignup, message) => {
       let errMsg = 'Ошибка, ненадежный пароль.Пароль должен состоять минимум из 6 символов'
       return errMsg
     }
+    if (error && isSignup && error.message === 'MISSING_PASSWORD' && type === 'password') {
+      let errMsg = 'Для регистрации необходим пароль'
+      return errMsg
+    }
   }
 
 }
